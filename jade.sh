@@ -34,9 +34,11 @@ case "$1" in
   main)
     TYPE=""
     SERVICES="-services $EVENT;$REPLICATION;$NOTIFICATION"
-    PORT=$2
-    LOCAL_PORT=$2
-    shift 2
+    HOST=$2
+    LOCAL_HOST=$2
+    PORT=$3
+    LOCAL_PORT=$3
+    shift 3
     ;;
   replica)
     TYPE="-backupmain"
