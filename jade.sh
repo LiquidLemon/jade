@@ -58,7 +58,6 @@ case "$1" in
     ;;
   key)
     keytool -genkeypair $KEYTOOL_FLAGS -alias 01
-    keytool -certreq $KEYTOOL_FLAGS -alias 01 -keyalg rsa -file 01.csr
     exit 0
     ;;
   *)
