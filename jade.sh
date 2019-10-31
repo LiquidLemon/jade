@@ -57,7 +57,7 @@ case "$1" in
     shift 3
     ;;
   key)
-    keytool -genkeypair $KEYTOOL_FLAGS -alias 01
+    "$JAVA_HOME/bin/keytool" -genkeypair $KEYTOOL_FLAGS -alias 01
     exit 0
     ;;
   *)
