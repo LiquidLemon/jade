@@ -17,6 +17,6 @@ wget "http://infinity.eti.pg.gda.pl/tmp/jade.zip" -O "${FILE}"
 unzip "${FILE}" -d "${WORKDIR}"
 rm "${FILE}"
 
-JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+JAVA_HOME=$(update-java-alternatives --list | grep 1.8.0 | awk '{print $3}')
 
-sed "s/, anon,/,/" "${JAVA_HOME}/lib/security/java.security" > "${WORKDIR}/jade/java.sec"
+sed "s/, anon,/,/" "${JAVA_HOME}/jre/lib/security/java.security" > "${WORKDIR}/jade/java.sec"
